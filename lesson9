@@ -1,0 +1,45 @@
+####################################################
+
+
+def buble_sort(l):
+    t = l.copy()
+    for n in range(0, len(t)):
+        for i in range(len(t) - 1 - n):             # нам не нужно брать последний элемент, поэтому ставим "-1"
+            if t[i] > t[i + 1]:                     # нужно проврять по этому обходу поэтому ставим "i" и проверяем соседа справа
+                t[i], t[i + 1] = t[i + 1], t[i]
+    return t
+
+
+nums = [4, 1, 6, 3, 2, 7, 8]
+sorted = buble_sort(nums)
+print(sorted)
+
+####################################################
+
+
+# my_library = [
+#     [34587, 'Learning Python, Mark Lutz', 4, 40.95],
+#     [98762, 'Programming Python, Mark Lutz', 5, 56.80],
+#     [77226, 'Head First Python, Paul Barry', 3, 32.95],
+#     [88112, 'Einfuhrung in Python3, Bernd Klein', 3, 24.99]
+# ]
+#
+# result = list(map(lambda l: (l[0], l[-1] * l[-2] + 10 if l[-1] * l[-2] < 100 else l[-1] * l[-2]), my_library))
+# print(result)
+#
+# second_library = [
+#     [24387, ' на русском', 2, 4.59],
+#     [18762, 'The C Programming Language (2nd Edition)', 12, 78.80],
+#     [87236, 'C Programming Absolute Beginner\'s Guide', 1, 23.55],
+#     [58132, 'Effective Modern C++: 42 Specific Ways to Improve Your Use of C++11 and C++14', 9, 42.89]
+# ]
+# whole_library = my_library + second_library
+# print(whole_library)
+#
+# whole_library.sort(key=lambda x: x[-1])
+# print(whole_library)
+#
+# res2 = list(filter(lambda l: l[-2] > 5, whole_library))
+# print(res2)
+#
+# #################################################
